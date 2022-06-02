@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -46,13 +47,14 @@ public class Pizza {
     private List<Comment> comments;
 
     @NotNull(message = "Pizza price must not be null.")
-    @NotEmpty(message = "Pizza price must be filled.")
     @Min(value = 0, message = "Pizza price cannot be negative.")
     private Double price;
 
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinTable
+    @JoinTable(name = "pizza_ingredient", 
+        joinColumns = @JoinColumn(name = "pizza_id"), 
+        inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
     private List<Ingredient> ingredients;
 
 

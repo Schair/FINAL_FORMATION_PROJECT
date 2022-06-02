@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -33,10 +34,12 @@ public class Ingredient {
     private String name;
 
     @NotNull(message = "Ingredient price must not be null.")
-    @NotEmpty(message = "Ingredient price must have a price.")
+    // @NotEmpty(message = "Ingredient price must have a price.")
+    @Min(value = 0, message = "Ingredient price must not be negative.")
     private Double price;
 
     // TODO: Check relation
+    // @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "ingredients")
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "ingredients")
     private List<Pizza> pizzas;
 }
