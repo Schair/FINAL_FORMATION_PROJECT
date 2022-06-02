@@ -4,9 +4,11 @@ import com.jayway.jsonpath.internal.function.numeric.Sum;
 import com.schairamaniega.pizzaproject.entities.Comment;
 import com.schairamaniega.pizzaproject.entities.Ingredient;
 import com.schairamaniega.pizzaproject.entities.Pizza;
+import com.schairamaniega.pizzaproject.entities.User;
 import com.schairamaniega.pizzaproject.services.CommentService;
 import com.schairamaniega.pizzaproject.services.IngredientService;
 import com.schairamaniega.pizzaproject.services.PizzaService;
+import com.schairamaniega.pizzaproject.services.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,8 @@ public class PizzaProjectApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demoData(PizzaService pizzaService, IngredientService ingredientService){
+	public CommandLineRunner demoData(PizzaService pizzaService, IngredientService ingredientService,
+		UserService userService, CommentService commentService){
 
 		return args -> {
 
@@ -32,6 +35,8 @@ public class PizzaProjectApplication {
 			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE").price(0.7).build());
 			ingredientService.save(Ingredient.builder().name("OREGANO").price(0.5).build());
 			ingredientService.save(Ingredient.builder().name("JAMON").price(1.8).build());
+
+			userService.save(User.builder().name("User").email("example@domain.com").password("1234").surname("Name").build());
 
 			List<Ingredient> test = new ArrayList<Ingredient>();
 
@@ -43,6 +48,8 @@ public class PizzaProjectApplication {
 			total += total * 0.2F;
 
 			pizzaService.save(Pizza.builder().name("Margarita").img("pizza.jpeg").price(total).ingredients(test).build());
+
+			commentService.save(Comment.builder().body("Wacala").score(8.0).user(userService.findNameById(1L)).pizza(pizzaService.findById(1L)).build());
 
 		};
 	}

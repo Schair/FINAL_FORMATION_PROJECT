@@ -43,7 +43,6 @@ public class Comment {
     // TODO: Complete relation
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @NotNull(message = "Comment pizza must not be null.")
-    @NotEmpty(message = "Comment pizza must be filled.")
     private Pizza pizza;
 
 }

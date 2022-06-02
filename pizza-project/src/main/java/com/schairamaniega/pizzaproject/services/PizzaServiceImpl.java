@@ -24,5 +24,10 @@ public class PizzaServiceImpl implements PizzaService {
     public Pizza save(Pizza pizza) {
         return this.pizzaDAO.save(pizza);
     }
+
+    @Override
+    public Pizza findById(Long id) {
+        return this.pizzaDAO.findById(id).get();
+    }
     
 }

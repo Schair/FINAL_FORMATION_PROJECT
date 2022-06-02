@@ -10,6 +10,8 @@ public interface PizzaService {
     
     public List<Pizza> findAll(Sort sort);
 
+    public Pizza findById(Long id);
+
     public Pizza save(Pizza pizza);
     
 }
