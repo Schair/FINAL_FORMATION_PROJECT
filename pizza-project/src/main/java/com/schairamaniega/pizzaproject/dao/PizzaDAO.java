@@ -15,8 +15,7 @@ public interface PizzaDAO extends JpaRepository<Pizza, Long> {
     @Query(value = "select p from Pizza p left join fetch p.ingredients")
     public List<Pizza> findAll(Sort sort);
 
-    // @Query(value = "select p from Pizza p left join fetch p.ingredients",
-    // countQuery = "select count(p) from Pizza left join fetch p.ingredients")
-    // public Page<Pizza> findAll(Pageable pageable);
-
+    @Query(value = "select p from Pizza p left join fetch p.ingredients",
+    countQuery = "select count(p) from Pizza p left join p.ingredients")
+    public Page<Pizza> findAll(Pageable pageable);
 }

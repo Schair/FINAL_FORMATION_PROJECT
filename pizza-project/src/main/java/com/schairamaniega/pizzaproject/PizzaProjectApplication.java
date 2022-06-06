@@ -48,6 +48,8 @@ public class PizzaProjectApplication {
 			total += total * 0.2F;
 
 			pizzaService.save(Pizza.builder().name("Margarita").img("pizza.jpeg").price(total).ingredients(test).build());
+			pizzaService.save(Pizza.builder().name("Margarita2").img("pizza.jpeg").price(total).ingredients(test).build());
+			pizzaService.save(Pizza.builder().name("Margarita3").img("pizza.jpeg").price(total).ingredients(test).build());
 
 			commentService.save(Comment.builder().body("Wacala").score(8.0).user(userService.findNameById(1L)).pizza(pizzaService.findById(1L)).build());
 

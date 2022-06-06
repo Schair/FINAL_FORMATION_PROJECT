@@ -6,6 +6,8 @@ import com.schairamaniega.pizzaproject.dao.PizzaDAO;
 import com.schairamaniega.pizzaproject.entities.Pizza;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,11 @@ public class PizzaServiceImpl implements PizzaService {
     @Override
     public Pizza findById(Long id) {
         return this.pizzaDAO.findById(id).get();
+    }
+
+    @Override
+    public Page<Pizza> findAll(Pageable pageable) {
+        return this.pizzaDAO.findAll(pageable);
     }
     
 }

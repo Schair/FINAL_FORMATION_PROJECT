@@ -13,6 +13,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -40,6 +42,7 @@ public class Ingredient {
 
     // TODO: Check relation
     // @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "ingredients")
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "ingredients")
     private List<Pizza> pizzas;
 }
