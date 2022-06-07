@@ -1,0 +1,64 @@
+$primary-color: #642401;
+$secondary-color: #803a20;
+$body-color-dark: #a37f53;
+$body-color-light: #D7A86E;
+
+$font-color-dark: #1f1f1f;
+$font-color-light: #cfcfcf;
+
+mat-toolbar{
+    background: $primary-color;
+    color: $font-color-light;
+}
+
+mat-divider {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: $body-color-light;
+}
+
+mat-sidenav {
+    padding: 2%;
+    width: 20%;
+    min-width: 15rem; 
+    border-right: none;
+    background: $secondary-color;
+    color: $font-color-light;
+}
+
+.div-content {
+    background: $body-color-dark;
+    height: 91.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: $font-color-light;
+}
+
+mat-sidenav-container {
+    height: 91.5vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu-button {
+    width: 100%;
+}
+
+.menu-img {
+    width: 100%;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

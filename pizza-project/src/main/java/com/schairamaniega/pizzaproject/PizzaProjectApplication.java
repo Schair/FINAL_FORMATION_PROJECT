@@ -1,15 +1,5 @@
 package com.schairamaniega.pizzaproject;
 
-import com.jayway.jsonpath.internal.function.numeric.Sum;
-import com.schairamaniega.pizzaproject.entities.Comment;
-import com.schairamaniega.pizzaproject.entities.Ingredient;
-import com.schairamaniega.pizzaproject.entities.Pizza;
-import com.schairamaniega.pizzaproject.entities.User;
-import com.schairamaniega.pizzaproject.services.CommentService;
-import com.schairamaniega.pizzaproject.services.IngredientService;
-import com.schairamaniega.pizzaproject.services.PizzaService;
-import com.schairamaniega.pizzaproject.services.UserService;
-
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +9,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import com.schairamaniega.pizzaproject.entities.Comment;
+import com.schairamaniega.pizzaproject.entities.Ingredient;
+import com.schairamaniega.pizzaproject.entities.Pizza;
+import com.schairamaniega.pizzaproject.entities.User;
+import com.schairamaniega.pizzaproject.services.CommentService;
+import com.schairamaniega.pizzaproject.services.IngredientService;
+import com.schairamaniega.pizzaproject.services.PizzaService;
+import com.schairamaniega.pizzaproject.services.UserService;
 
 @SpringBootApplication
 public class PizzaProjectApplication {

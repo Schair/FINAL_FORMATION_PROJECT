@@ -1,0 +1,52 @@
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">chevron_left</mat-icon>
+  </button>
+  <button mat-icon-button *ngIf="sidenav.mode === 'side'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">chevron_left</mat-icon>
+  </button>
+    Pizza Project
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+      <div class="menu-button-container">
+        <div>
+          <img [src]="logoPath" class="menu-img" alt="Pizza store logo">
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="menu-button-container">
+        <button mat-button class="menu-button">
+          <mat-icon>home</mat-icon>
+          <span>Inicio</span>
+        </button>
+      </div>
+      <div class="menu-button-container">
+        <button mat-button class="menu-button">
+          <mat-icon>apps</mat-icon>
+          <span>Pizzas</span>
+        </button>
+      </div>
+      <div class="menu-button-container">
+        <button mat-button class="menu-button">
+          <mat-icon>add</mat-icon>
+          <span>Añadir</span>
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="menu-button-container">
+        <button mat-button class="menu-button">
+          <mat-icon>person</mat-icon>
+          <span>Log In</span>
+        </button>
+      </div>
+  
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="div-content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
