@@ -36,5 +36,10 @@ public class PizzaServiceImpl implements PizzaService {
     public Page<Pizza> findAll(Pageable pageable) {
         return this.pizzaDAO.findAll(pageable);
     }
+
+    @Override
+    public List<Pizza> findAll() {
+        return this.pizzaDAO.findAll();
+    }
     
 }

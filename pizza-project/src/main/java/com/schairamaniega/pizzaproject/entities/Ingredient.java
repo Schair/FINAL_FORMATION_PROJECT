@@ -36,13 +36,12 @@ public class Ingredient {
     private String name;
 
     @NotNull(message = "Ingredient price must not be null.")
-    // @NotEmpty(message = "Ingredient price must have a price.")
     @Min(value = 0, message = "Ingredient price must not be negative.")
     private Double price;
 
-    // TODO: Check relation
-    // @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "ingredients")
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, mappedBy = "ingredients")
     private List<Pizza> pizzas;
+
+    private int type;
 }

@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PizzaDAO extends JpaRepository<Pizza, Long> {
     
-    @Query(value = "select p from Pizza p left join fetch p.ingredients")
+    @Query(value = "select distinct p from Pizza p left join fetch p.ingredients")
     public List<Pizza> findAll(Sort sort);
 
     @Query(value = "select p from Pizza p left join fetch p.ingredients",

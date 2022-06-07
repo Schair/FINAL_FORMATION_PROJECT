@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 public interface PizzaService {
+
+    public List<Pizza> findAll();
     
     public List<Pizza> findAll(Sort sort);
 
