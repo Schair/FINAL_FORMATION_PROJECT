@@ -1,0 +1,14 @@
+.pizzas {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 90vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.example-viewport {
+    height: 100vh;
+    width: 500px;
+    border: 1px solid black;
+  }

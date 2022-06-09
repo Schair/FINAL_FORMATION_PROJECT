@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Ingredient } from '../../interfaces/ingredient';
 import { Pizza } from '../../interfaces/pizza';
 
 @Component({
@@ -12,9 +13,27 @@ export class PizzaComponent implements OnInit {
   // TODO: Generate output
   //@Output()
 
+  ingredients!: Ingredient[];
+  ingredientsString!: string;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.ingredients = this.pizza.ingredients;
   }
 
+  getUrl(){
+    return "/assets/img/" + this.pizza.img;
+  }
+  getDough(){
+    return this.ingredients.filter(ingredient => ingredient.type == 1);
+  }
+
+  getIngredientsString(){
+    this.pizza.ingredients.filter(ingredient => ingredient.type != 1).forEach(element => {
+      this.ingredientsString += element.name + ", ";
+    });
+
+    return this.ingredientsString;
+  }
 }

@@ -1,0 +1,22 @@
+<div class="grid-container">
+  <div *ngIf="!mobile" class="mat-container">
+    <mat-grid-list  cols="12" rowHeight="12:1">
+      <mat-grid-tile [colspan]="12" [rowspan]="6" class="pizza-name">
+        <h1>{{pizza.name}}</h1>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="3" [rowspan]="36">
+        <img [src]="'/assets/img/' + pizza.img" class="pizza-img">
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="9" [rowspan]="48"> ingredientes </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div *ngIf="mobile" class="mobile-container">
+    <div class="pizza-name-container">
+      <h1 class="pizza-name">{{pizza.name}}</h1>
+    </div>
+    <div class="pizza-img-container">
+      <img [src]="'/assets/img/' + pizza.img" class="pizza-img">
+    </div>
+  </div>
+</div>

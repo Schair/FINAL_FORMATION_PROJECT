@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ResponsiveNavModule } from './header/components/responsive-nav/responsive-nav.module';
-import { PizzasModule } from './maincomponent/components/pizzas/pizzas.module';
+import { DetailsModule } from './maincomponent/components/details/details.module';
 import { HomeModule } from './maincomponent/components/home/home.module';
+import { PizzasModule } from './maincomponent/components/pizzas/pizzas.module';
+
+
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeModule } from './maincomponent/components/home/home.module';
     BrowserAnimationsModule,
     ResponsiveNavModule,
     PizzasModule,
-    HomeModule
+    HomeModule,
+    DetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

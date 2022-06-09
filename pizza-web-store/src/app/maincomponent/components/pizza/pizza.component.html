@@ -1,14 +1,15 @@
-<mat-card class="card">
-    <mat-card-title>{{ pizza.name }}</mat-card-title>
-    <mat-card-content>{{ pizza.price }}</mat-card-content>
-    <mat-card-actions>
-      <!-- <button
-      mat-flat-button
-      color="primary"
-      (click)="onClick()"
-      [disabled]="product.stock === 0">
-        Buy {{ product.price | currency }}
-        <mat-icon>add_shopping_cart</mat-icon>
-      </button> -->
-    </mat-card-actions>
-  </mat-card>
+<mat-card [style.background-image]="'url(' + getUrl() + ')'" class="card">
+  <span class="card-child">
+    <mat-card-title class="card-item"><strong>{{ pizza.name }}</strong></mat-card-title>
+    <mat-card-content class="card-item">
+      <p *ngFor="let dough of getDough()">{{dough.name}}</p>
+      <p>{{ingredients.length}}</p>
+    </mat-card-content>
+  </span>
+  <mat-card-actions>
+  </mat-card-actions>
+    <mat-card-footer align="end">
+        <span class="price">{{pizza.price.toFixed(2)}} €</span>
+    </mat-card-footer>
+</mat-card>
+

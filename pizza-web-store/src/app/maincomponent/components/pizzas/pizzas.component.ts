@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { Pizza } from '../../interfaces/pizza';
 import { PizzasService } from '../../services/pizzas.service';
 
 @Component({
   selector: 'app-pizzas',
   templateUrl: './pizzas.component.html',
-  styleUrls: ['./pizzas.component.scss']
+  styleUrls: ['./pizzas.component.scss'],
 })
 export class PizzasComponent implements OnInit {
 

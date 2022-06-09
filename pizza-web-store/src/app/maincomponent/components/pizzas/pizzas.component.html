@@ -1,17 +1,9 @@
 
 <!-- <pre>
     {{pizzas | json}}
-</pre> -->
-<section class="pizzas">
-    <app-pizza [pizza]="pizza" *ngFor="let pizza of pizzas"></app-pizza>
-  </section>
+</pre> --> 
+<div class="pizzas">
+  <app-pizza [pizza]="pizza"  *ngFor="let pizza of pizzas"></app-pizza>
+</div>
 
-  <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-        *ngFor="let pizza of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-      {{tile.text}}
-    </mat-grid-tile>
-  </mat-grid-list>
+

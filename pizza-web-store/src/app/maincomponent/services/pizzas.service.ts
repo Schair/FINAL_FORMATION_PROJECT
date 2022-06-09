@@ -16,4 +16,9 @@ export class PizzasService {
   getPizzas() : Observable<Pizza[]>{
     return this.http.get<PizzasResponse>(this.apiURL).pipe(map(response => response._embedded.pizzaList));
   }
+
+  getPizza(id: number) : Observable<Pizza>{
+    console.log(this.apiURL + '/' + id);
+    return this.http.get<Pizza>(this.apiURL + '/' + id);
+  }
 }

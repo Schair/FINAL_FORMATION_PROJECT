@@ -66,28 +66,28 @@ public class PizzaProjectApplication {
 			// List<Ingredient> ingredients = new ArrayList<Ingredient>();
 
 			// PIZZA MARGARITA
-			this.createPizza("Margarita", new Long[]{1L, 3L, 12L, 16L, 8L}, ingredientService, pizzaService);
+			this.createPizza("Margarita", "margherita.jpg", new Long[]{1L, 3L, 12L, 16L, 8L}, ingredientService, pizzaService);
 
 			// PIZZA PROSCIUTTO
-			this.createPizza("Prosciutto", new Long[]{1L, 3L, 12L, 16L, 7L}, ingredientService, pizzaService);
+			this.createPizza("Prosciutto", "prosciutto.jpg", new Long[]{1L, 3L, 12L, 16L, 7L}, ingredientService, pizzaService);
 
 			// PIZZA YORKESO
-			this.createPizza("Yorkeso", new Long[]{1L, 5L, 12L, 16L, 8L}, ingredientService, pizzaService);
+			this.createPizza("Yorkeso", "york.jpg", new Long[]{1L, 5L, 12L, 16L, 8L}, ingredientService, pizzaService);
 
 			// PIZZA CUATRO-QUESOS
-			this.createPizza("Cuatro Quesos", new Long[]{1L, 3L, 4L, 5L, 6L, 12L, 16L}, ingredientService, pizzaService);
+			this.createPizza("Cuatro Quesos", "4q.jpg", new Long[]{1L, 3L, 4L, 5L, 6L, 12L, 16L}, ingredientService, pizzaService);
 
 			// PIZZA HAWAIANA
-			this.createPizza("Hawaiana", new Long[]{1L, 5L, 12L, 14L, 16L, 19L, 20L}, ingredientService, pizzaService);
+			this.createPizza("Hawaiana", "hawaian.jpg", new Long[]{1L, 5L, 12L, 14L, 16L, 19L, 20L}, ingredientService, pizzaService);
 
-			// PIZZA NATA
-			this.createPizza("Nata", new Long[]{1L, 5L, 6L, 8L, 13L, 15L, 16L}, ingredientService, pizzaService);
+			// PIZZA CARBONARA
+			this.createPizza("Carbonara", "carbonara.jpg", new Long[]{1L, 5L, 6L, 8L, 13L, 15L, 16L}, ingredientService, pizzaService);
 
 			// PIZZA PEPPERONNISIMA
-			this.createPizza("Pepperonnisima", new Long[]{2L, 3L, 9L, 12L, 16L}, ingredientService, pizzaService);
+			this.createPizza("Pepperonisima", "pepperoni.jpg", new Long[]{2L, 3L, 9L, 12L, 16L}, ingredientService, pizzaService);
 
 			// PIZZA BBQ-MIX
-			this.createPizza("BBQ-Mix", new Long[]{1L, 3L, 10L, 11L, 12L, 16L, 14L}, ingredientService, pizzaService);
+			this.createPizza("BBQ-Mix", "bbq.jpg", new Long[]{1L, 3L, 10L, 11L, 12L, 16L, 14L}, ingredientService, pizzaService);
 
 			for (Pizza pizza : pizzaService.findAll()) {
 				byte[] array = new byte[10]; // length is bounded by 7
@@ -105,6 +105,20 @@ public class PizzaProjectApplication {
 		return total;
 	}
 
+	private void createPizza(String name, String img, Long[] ingredientsArray, IngredientService ingredientService, PizzaService pizzaService){
+		List<Ingredient> ingredients = new ArrayList<Ingredient>();
+		double price;
+
+		ingredients.clear();
+
+		for (Long ingredient : ingredientsArray) {
+			ingredients.add(ingredientService.findById(ingredient));
+		}
+
+		price = getPrice(ingredients);
+		
+		pizzaService.save(Pizza.builder().name(name).img(img).price(price).ingredients(ingredients).build());
+	}
 	private void createPizza(String name, Long[] ingredientsArray, IngredientService ingredientService, PizzaService pizzaService){
 		List<Ingredient> ingredients = new ArrayList<Ingredient>();
 		double price;
@@ -117,7 +131,7 @@ public class PizzaProjectApplication {
 
 		price = getPrice(ingredients);
 		
-		pizzaService.save(Pizza.builder().name(name).img("pizza.jpeg").price(price).ingredients(ingredients).build());
+		pizzaService.save(Pizza.builder().name(name).img("pizza.png").price(price).ingredients(ingredients).build());
 	}
 
 }

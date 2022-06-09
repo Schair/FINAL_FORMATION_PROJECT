@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-responsive-nav',
   templateUrl: './responsive-nav.component.html',
@@ -12,7 +13,7 @@ export class ResponsiveNavComponent implements OnInit {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
   logoPath: string;
 
-  constructor(public observer: BreakpointObserver) { 
+  constructor(public observer: BreakpointObserver, private router: Router) { 
     this.logoPath = '/assets/img/pizza.png';
   }
 
@@ -29,6 +30,10 @@ export class ResponsiveNavComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  sidenavBtnClick(route: string){
+    this.router.navigateByUrl(route);
   }
 
 }
