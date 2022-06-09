@@ -7,9 +7,11 @@
     </mat-card-content>
   </span>
   <mat-card-actions>
+    
   </mat-card-actions>
-    <mat-card-footer align="end">
-        <span class="price">{{pizza.price.toFixed(2)}} €</span>
+    <mat-card-footer align="center">
+      <button mat-stroked-button color="accent" [style.width]="'30%'" (click)="cardClick(pizza.id)">Detalles</button>
+      <button mat-stroked-button color="primary" [style.width]="'50%'" (click)="cardClick(pizza.id)">{{pizza.price.toFixed(2)}} €</button>
     </mat-card-footer>
 </mat-card>
 

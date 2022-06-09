@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { PizzaComponent } from '../pizza/pizza.component';
 import { PizzasRoutingModule } from './pizzas-routing.module';
 import { PizzasComponent } from './pizzas.component';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 
@@ -18,7 +20,8 @@ import { PizzasComponent } from './pizzas.component';
     CommonModule,
     PizzasRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   exports: [
     PizzaComponent,

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ingredient } from '../../interfaces/ingredient';
 import { Pizza } from '../../interfaces/pizza';
 
@@ -16,7 +17,7 @@ export class PizzaComponent implements OnInit {
   ingredients!: Ingredient[];
   ingredientsString!: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void { 
     this.ingredients = this.pizza.ingredients;
@@ -35,5 +36,9 @@ export class PizzaComponent implements OnInit {
     });
 
     return this.ingredientsString;
+  }
+
+  cardClick(id: number){
+    this.router.navigateByUrl('details/' + id);
   }
 }
