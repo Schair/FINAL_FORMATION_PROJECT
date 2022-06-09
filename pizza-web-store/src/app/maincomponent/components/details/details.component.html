@@ -1,13 +1,22 @@
 <div class="grid-container">
   <div *ngIf="!mobile" class="mat-container">
-    <mat-grid-list  cols="12" rowHeight="12:1">
-      <mat-grid-tile [colspan]="12" [rowspan]="6" class="pizza-name">
-        <h1>{{pizza.name}}</h1>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="3" [rowspan]="36">
+    <div class="pizza-name-container">
+      <h1 class="pizza-name">{{pizza.name}}</h1>
+    </div>
+    <mat-grid-list cols="12" rowHeight="12:1">
+      <mat-grid-tile [colspan]="6" [rowspan]="36">
         <img [src]="'/assets/img/' + pizza.img" class="pizza-img">
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="9" [rowspan]="48"> ingredientes </mat-grid-tile>
+      <mat-grid-tile [colspan]="6" [rowspan]="48" class="ingredients-grid-tile">
+        <div class="ingredients-container">
+          <p *ngFor="let dough of getDough()" class="dough">{{dough.name}}</p>
+          <p [style.color]="'white'">INGREDIENTES:</p>
+          <p *ngFor="let ingredient of getIngredients()" class="ingredients">{{ingredient.name}}</p>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="6" [rowspan]="12">
+        <button [style.width]="'100%'">AÑADIR  - {{pizza.price.toFixed(2)}} €</button>
+      </mat-grid-tile>
     </mat-grid-list>
   </div>
 
@@ -15,8 +24,17 @@
     <div class="pizza-name-container">
       <h1 class="pizza-name">{{pizza.name}}</h1>
     </div>
-    <div class="pizza-img-container">
-      <img [src]="'/assets/img/' + pizza.img" class="pizza-img">
+    <div class="pizza-img-container" [style.background-image]="'url(/assets/img/' + pizza.img + ')'">
+      <div class="pizza-img-shader">
+        <div class="ingredients-container">
+          <p *ngFor="let dough of getDough()" class="dough">{{dough.name}}</p>
+          <p [style.color]="'white'">INGREDIENTES:</p>
+          <p *ngFor="let ingredient of getIngredients()" class="ingredients">{{ingredient.name}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button [style.width]="'100%'">AÑADIR  - {{pizza.price.toFixed(2)}} €</button>
     </div>
   </div>
 </div>

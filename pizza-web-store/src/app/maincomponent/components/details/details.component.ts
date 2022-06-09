@@ -4,6 +4,7 @@ import { Pizza } from '../../interfaces/pizza';
 import { PizzasService } from '../../services/pizzas.service';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { Ingredient } from '../../interfaces/ingredient';
 
 export interface Tile {
   color: string;
@@ -30,7 +31,8 @@ export class DetailsComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  constructor(private route: ActivatedRoute, private pizzaService: PizzasService, private observer: BreakpointObserver) { }
+  constructor(private route: ActivatedRoute, private pizzaService: PizzasService, 
+    private observer: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -41,6 +43,13 @@ export class DetailsComponent implements OnInit {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
       this.mobile = res.matches;
     });
+  }
+
+  getIngredients(){
+    return this.pizza.ingredients.filter(ingredient => ingredient.type != 1);
+  }
+  getDough(){
+    return this.pizza.ingredients.filter(ingredient => ingredient.type == 1);
   }
 
 }

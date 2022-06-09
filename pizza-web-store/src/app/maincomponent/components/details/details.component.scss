@@ -1,9 +1,9 @@
+
 .grid-container {
     border: 1rem black;
     height: 100%;
     width: 100px;
     display: inline;
-    
 }
 
 .mat-container {
@@ -29,12 +29,47 @@
 .pizza-img{
     width: 100%;
     height: auto;
-    border-radius: 5px;
 }
 
 .pizza-img-container{
-    // margin: 2rem;
+    display: flex;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-size: cover;
 }
 
+.pizza-img-shader{
+    background-color: rgba(#000000, 0.5);
+    background-size: contain;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: 200%;
+}
 
+.ingredients-container{
+    padding: 1rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.dough{
+    font-style: oblique;
+    font-weight: bolder;
+    color: #cebdaa;
+}
+
+.ingredients {
+    font-size: 1rem;
+    margin: 0;
+    margin-left: 1rem;
+    color: white;
+}
+
+.ingredients-grid-tile{
+    left: 0;
+}
 
