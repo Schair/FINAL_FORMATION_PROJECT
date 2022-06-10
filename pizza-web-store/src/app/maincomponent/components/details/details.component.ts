@@ -57,8 +57,6 @@ export class DetailsComponent implements OnInit {
     commentData.append('score', this.commentForm.get('score')?.value);
     commentData.append('body', this.commentForm.get('body')?.value);
 
-    console.log(this.commentForm.get('body')?.value);
-
     this.http.post(`http://localhost:8080/details/${this.id}`, commentData).subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)

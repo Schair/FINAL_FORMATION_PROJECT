@@ -3,6 +3,7 @@ package com.schairamaniega.pizzaproject.controllers;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.schairamaniega.pizzaproject.entities.Pizza;
+import com.schairamaniega.pizzaproject.entities.PizzaRequest;
 import com.schairamaniega.pizzaproject.hateoas.assemblers.PizzaModelAssembler;
 import com.schairamaniega.pizzaproject.services.PizzaService;
 
@@ -77,7 +78,7 @@ public class PizzaController {
 
     }
 
-    @PostMapping
+    @PostMapping(value = "/add")
 	// public ResponseEntity<Map<String, Object>> save(@Valid @RequestBody Pizza pizza, BindingResult bindingResult){
     public ResponseEntity<Map<String, Object>> save(@ModelAttribute Pizza pizza, BindingResult bindingResult){
 

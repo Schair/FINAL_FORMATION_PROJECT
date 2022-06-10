@@ -13,9 +13,8 @@ import { IngredientsService } from '../../services/ingredients.service';
 export class AddComponent implements OnInit {
 
   ingredients!: Ingredient[];
-  tempIngredients!: number[];
 
-  price!: number;
+  ingredientsToSend!: Ingredient[];
 
   pizzaForm!: FormGroup;
 
@@ -46,15 +45,17 @@ export class AddComponent implements OnInit {
 
     var pizzaData: any = new FormData();
     pizzaData.append('name', this.pizzaForm.get('name')?.value);
+    this.ingredientsToSend = this.pizzaForm.get('toppings')?.value;
     pizzaData.append('ingredients', this.pizzaForm.get('dough')?.value);
-    pizzaData.append('ingredients', this.pizzaForm.get('toppings')?.value);
     pizzaData.append('img', "default.webp");
+
+    console.log(this.pizzaForm.get('toppings')?.value);
     
-    this.http.post(`http://localhost:8080/pizzas`, pizzaData).subscribe({
+    this.http.post("http://localhost:8080/pizzas/add", pizzaData).subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     });
 
-    window.location.reload()
+    // window.location.reload()
   }
 }

@@ -12,23 +12,19 @@
 
                 <label for="dough" class="form-label">Masa</label>
                 <select formControlName="dough" class="form-control" name="dough" id="dough">
-                    <option *ngFor="let dough of getDough()" [value]="dough.id">{{dough.name}}</option>
+                    <option *ngFor="let dough of getDough()" [value]="dough">{{dough.name}}</option>
                 </select>
 
                 <hr>
                 <label class="form-label">Ingredientes</label>
-                <div class="checkbox-container">
-                    <div *ngFor="let ingredient of getIngredients()" class="form-check">
-                        <input class="form-check-input" type="checkbox" formControlName="toppings" [value]="ingredient.id"
-                            [id]="ingredient.id">
-                        <label class="form-check-label">
-                            {{ingredient.name}}
-                        </label>
-                    </div>
-                </div>
+  
+                <mat-button-toggle-group formControlName="toppings" aria-label="Font Style" multiple>
+                    <mat-button-toggle *ngFor="let topping of getIngredients()" [value]="topping">{{topping.name}}</mat-button-toggle>
+                </mat-button-toggle-group>
+
+                <hr>
+                <button class="btn btn-info" type="submit">Añadir Pizza</button>
             </form>
-            <hr>
-            <button class="btn btn-info" type="submit">Añadir Pizza</button>
         </div>
     </div>
 
