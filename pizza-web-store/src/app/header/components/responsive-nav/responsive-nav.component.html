@@ -9,7 +9,7 @@
   </button>
   <h3>Pizza Project</h3>
   <span class="spacer"></span>
-  <button mat-icon-button class="toolbar-button">
+  <button mat-icon-button class="toolbar-button" (click)="sidenavBtnClick('')">
     <mat-icon>person</mat-icon>
   </button>
   </mat-toolbar>
@@ -21,12 +21,12 @@
         </div>
       </div>
       <mat-divider></mat-divider>
-      <div class="menu-button-container">
+      <!-- <div class="menu-button-container">
         <button mat-button class="menu-button" (click)="sidenavBtnClick('')">
           <mat-icon>home</mat-icon>
           <span>Inicio</span>
         </button>
-      </div>
+      </div> -->
       <div class="menu-button-container">
         <button mat-button class="menu-button" (click)="sidenavBtnClick('/pizzas')">
           <mat-icon>apps</mat-icon>

@@ -11,20 +11,21 @@ $body-color-light: #D7A86E;
 .grid-container {
     border: 1rem black;
     height: 100%;
-    display: inline;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    // scroll-behavior: smooth;
 }
 
 .mat-container {
     position: absolute;
+    display: block;
     height: auto;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
     margin: 2rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    
 }
 
 .mobile-container {
@@ -35,14 +36,13 @@ $body-color-light: #D7A86E;
     left: 0;
     right: 0;
     margin: 2rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 .pizza-img{
-    width: 100%;
+    width: auto;
     height: auto;
+    max-height: 25vh;
+    max-width: auto;
 }
 
 .pizza-img-container{
@@ -61,7 +61,7 @@ $body-color-light: #D7A86E;
     margin-left: -2rem;
     margin-right: -2rem;
     padding-left: 1rem;
-    width: 110%;
+    width: 120%;
 }
 
 .ingredients-container{
@@ -69,7 +69,6 @@ $body-color-light: #D7A86E;
     padding-left: 2rem;
     font-size: 1rem;
     width: 100%;
-    justify-content: flex-start;
 }
 
 .dough{
@@ -90,11 +89,16 @@ $body-color-light: #D7A86E;
 }
 
 .comment-form-container{
-    width: 100%;
+    width: 90%;
+    height: 41vh;
     position: absolute;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+    left: 2rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .comment-card-container{
@@ -172,4 +176,13 @@ textarea:focus {
 
 h1{
     font-size: 2rem;
+}
+
+.img-tile {
+    width: 50%;
+}
+
+.info-container {
+    width: 100%;
+    display: flex;
 }

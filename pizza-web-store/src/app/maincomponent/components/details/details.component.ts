@@ -5,8 +5,9 @@ import { PizzasService } from '../../services/pizzas.service';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-details',
@@ -19,12 +20,17 @@ export class DetailsComponent implements OnInit {
   pizza!: Pizza;
   mobile!: boolean;
 
-  commentForm = new FormGroup({
-    body: new FormControl(''),
-  });
+  commentForm: FormGroup;
 
   constructor(private route: ActivatedRoute, private pizzaService: PizzasService, 
-    private observer: BreakpointObserver) { }
+    private observer: BreakpointObserver, public formBuilder: FormBuilder, private http: HttpClient) {
+      this.commentForm = this.formBuilder.group({
+        body: [''],
+        score: [''],
+        pizza_id: [this.id],
+        user: ['']
+      });
+    }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -44,8 +50,22 @@ export class DetailsComponent implements OnInit {
     return this.pizza.ingredients.filter(ingredient => ingredient.type == 1);
   }
 
-  commentSubmit() {
-    console.log(this.commentForm);
+  submitComment(){
+
+    var commentData: any = new FormData();
+    commentData.append('user', "default");
+    commentData.append('score', this.commentForm.get('score')?.value);
+    commentData.append('body', this.commentForm.get('body')?.value);
+
+    console.log(this.commentForm.get('body')?.value);
+
+    this.http.post(`http://localhost:8080/details/${this.id}`, commentData).subscribe({
+      next: (response) => console.log(response),
+      error: (error) => console.log(error)
+    });
+
+    window.location.reload()
+
   }
 
 }

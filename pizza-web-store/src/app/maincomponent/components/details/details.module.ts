@@ -8,6 +8,8 @@ import { DetailsRoutingModule } from './details-routing.module';
 import { DetailsComponent } from './details.component';
 import { CommentModule } from '../comment/comment.module';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     TextFieldModule,
     CommentModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     DetailsComponent,

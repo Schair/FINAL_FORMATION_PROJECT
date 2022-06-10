@@ -1,74 +1,56 @@
 <div class="grid-container">
-  <div *ngIf="!mobile" class="mat-container">
-    <div class="pizza-name-container">
-      <h1 class="pizza-name">{{pizza.name}}</h1>
-    </div>
-    <mat-grid-list cols="12" rowHeight="12:1">
-      <mat-grid-tile [colspan]="6" [rowspan]="36">
-        <img [src]="'/assets/img/' + pizza.img" class="pizza-img">
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="6" [rowspan]="48" class="ingredients-grid-tile">
+  <div class="responsive-container">
+    <div *ngIf="!mobile" class="mat-container">
+      <div class="pizza-name-container">
+        <h1 class="pizza-name">{{pizza.name}}</h1>
+      </div>
+      <div class="info-container">
+        <div class="img-tile">
+          <img [src]="'/assets/img/' + pizza.img" class="pizza-img">
+          <button mat-flat-button color="primary" disabled [style.width]="'100%'">AÑADIR - {{pizza.price.toFixed(2)}}€</button>
+        </div>
         <div class="ingredients-container">
           <p *ngFor="let dough of getDough()" class="dough">{{dough.name}}</p>
           <p [style.color]="'white'">INGREDIENTES:</p>
           <p *ngFor="let ingredient of getIngredients()" class="ingredients">{{ingredient.name}}</p>
+        </div> 
+      </div>
+    </div>
+
+    <div *ngIf="mobile" class="mobile-container">
+      <div class="pizza-name-container">
+        <h1 class="pizza-name">{{pizza.name}}</h1>
+      </div>
+      <div class="pizza-img-container" [style.background-image]="'url(/assets/img/' + pizza.img + ')'">
+        <div class="pizza-img-shader">
+          <div class="ingredients-container">
+            <p *ngFor="let dough of getDough()" class="dough">{{dough.name}}</p>
+            <p [style.color]="'white'">INGREDIENTES:</p>
+            <p *ngFor="let ingredient of getIngredients()" class="ingredients">{{ingredient.name}}</p>
+          </div>
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="6" [rowspan]="12">
-        <button mat-flat-button color="primary" [style.width]="'100%'">AÑADIR - {{pizza.price.toFixed(2)}} €</button>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <div class="comment-form-container">
-      <h2>¡Deja tu comentario!</h2>
-      <form action="">
-        <textarea id="body" placeholder="Escriba su comentario"></textarea>
-
-        <input class="score" type="number" min="0" max="10" placeholder="0" step="0.1" name="score" id="score">
-        <label for="score">Puntuación</label>
-
-        <br>
-        <button mat-flat-button color="primary">Enviar</button>
-      </form>
-      <div class="comment-card-container">
-        <h2>Comentarios</h2>
-        <app-comment [comment]="comment" *ngFor="let comment of pizza.comments"></app-comment>
+      </div>
+      <div class="btn-container">
+        <button mat-flat-button color="primary" disabled>AÑADIR - {{pizza.price.toFixed(2)}} €</button>
       </div>
     </div>
   </div>
+  <div class="comment-form-container">
+    <h2>¡Deja tu comentario!</h2>
+    <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
 
-  <div *ngIf="mobile" class="mobile-container">
-    <div class="pizza-name-container">
-      <h1 class="pizza-name">{{pizza.name}}</h1>
-    </div>
-    <div class="pizza-img-container" [style.background-image]="'url(/assets/img/' + pizza.img + ')'">
-      <div class="pizza-img-shader">
-        <div class="ingredients-container">
-          <p *ngFor="let dough of getDough()" class="dough">{{dough.name}}</p>
-          <p [style.color]="'white'">INGREDIENTES:</p>
-          <p *ngFor="let ingredient of getIngredients()" class="ingredients">{{ingredient.name}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="btn-container">
-      <button mat-flat-button color="primary">AÑADIR - {{pizza.price.toFixed(2)}} €</button>
-    </div>
-    <div class="comment-form-container">
-      <h2>¡Deja tu comentario!</h2>
-      <form action="">
-        <textarea id="body" placeholder="Escriba su comentario"></textarea>
+      <textarea ngModel formControlName="body" id="body" name="body" placeholder="Escriba su comentario"></textarea>
 
-        <input class="score" type="number" min="0" max="10" placeholder="0" step="0.1" name="score" id="score">
-        <label for="score">Puntuación</label>
+      <input ngModel required formControlName="score" class="score" type="number" min="0" max="10" placeholder="0" step="0.1" name="score" id="score">
+      <label for="score">Puntuación (entre 0 y 10)</label>
 
-        <!-- <input matInput color="accent" value="Enviar comentario" type="submit"> -->
-        <br>
-        <button mat-flat-button color="primary">Enviar</button>
-      </form>
+      <br>
+      <button mat-flat-button color="primary" type="submit">Enviar</button>
 
-      <div class="comment-card-container">
-        <h2>Comentarios</h2>
-        <app-comment [comment]="comment" *ngFor="let comment of pizza.comments"></app-comment>
-      </div>
+    </form>
+    <div class="comment-card-container">
+      <h2>Comentarios</h2>
+      <app-comment [comment]="comment" *ngFor="let comment of pizza.comments"></app-comment>
     </div>
   </div>
 </div>

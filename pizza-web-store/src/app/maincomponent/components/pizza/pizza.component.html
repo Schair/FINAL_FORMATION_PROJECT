@@ -11,7 +11,7 @@
   </mat-card-actions>
     <mat-card-footer align="center">
       <button mat-stroked-button color="accent" [style.width]="'30%'" (click)="cardClick(pizza.id)">Detalles</button>
-      <button mat-flat-button color="primary" [style.width]="'50%'">{{pizza.price.toFixed(2)}} €</button>
+      <button mat-flat-button color="primary" disabled [style.width]="'50%'">{{pizza.price.toFixed(2)}} €</button>
     </mat-card-footer>
 </mat-card>
 

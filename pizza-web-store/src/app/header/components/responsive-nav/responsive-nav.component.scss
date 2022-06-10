@@ -19,7 +19,7 @@ mat-toolbar::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url('/assets/img/bg-pattern3.webp');
+    background-image: url('/assets/css-assets/bg-pattern3.webp');
     background-size: contain;
     opacity: 0.02;
 }
@@ -61,20 +61,24 @@ mat-sidenav {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url('/assets/img/bg-pattern2.jpg');
+    background-image: url('/assets/css-assets/bg-pattern2.jpg');
     background-size: contain;
     opacity: 0.02;
 }
 
 .div-content * {
-    position: relative;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 mat-sidenav-container {
     height: 91.5vh;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     // overflow-y: scroll;
+    // overflow-x: hidden;
     // scroll-behavior: smooth;
 
 }
@@ -86,7 +90,7 @@ mat-sidenav::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url('/assets/img/bg-pattern.jpg');
+    background-image: url('/assets/css-assets/bg-pattern.jpg');
     background-size: cover;
     opacity: 0.02;
 }
@@ -121,4 +125,6 @@ mat-sidenav * {
     transform: scale(1.2);
 }
 
-
+.mat-drawer-content{
+    overflow: hidden;
+}

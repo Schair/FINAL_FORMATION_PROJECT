@@ -90,21 +90,9 @@ public class PizzaProjectApplication {
 			this.createPizza("BBQ-Mix", "bbq.jpg", new Long[]{1L, 3L, 10L, 11L, 12L, 16L, 14L}, ingredientService, pizzaService);
 
 			for (Pizza pizza : pizzaService.findAll()) {
-				byte[] array = new byte[10]; // length is bounded by 7
-				new Random().nextBytes(array);
-				String generatedString = new String(array, Charset.forName("UTF-8"));
+			
 
-				commentService.save(Comment.builder().body(generatedString).user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
-
-				array = new byte[30];
-				new Random().nextBytes(array);
-				generatedString = new String(array, Charset.forName("UTF-8"));
-				commentService.save(Comment.builder().body(generatedString).user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
-
-				array = new byte[30];
-				new Random().nextBytes(array);
-				generatedString = new String(array, Charset.forName("UTF-8"));
-				commentService.save(Comment.builder().body(generatedString).user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
+				commentService.save(Comment.builder().body("Este es un comentario de ejemplo.").user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
 
 			}
 		};
