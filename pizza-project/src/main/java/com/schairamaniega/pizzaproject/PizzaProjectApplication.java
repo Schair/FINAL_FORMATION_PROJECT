@@ -95,6 +95,17 @@ public class PizzaProjectApplication {
 				String generatedString = new String(array, Charset.forName("UTF-8"));
 
 				commentService.save(Comment.builder().body(generatedString).user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
+
+				array = new byte[30];
+				new Random().nextBytes(array);
+				generatedString = new String(array, Charset.forName("UTF-8"));
+				commentService.save(Comment.builder().body(generatedString).user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
+
+				array = new byte[30];
+				new Random().nextBytes(array);
+				generatedString = new String(array, Charset.forName("UTF-8"));
+				commentService.save(Comment.builder().body(generatedString).user(userService.findNameById((long)Math.floor(Math.random() * 3 + 1))).score(Math.random() * 10).pizza(pizza).build());
+
 			}
 		};
 	}

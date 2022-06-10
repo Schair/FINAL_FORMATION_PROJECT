@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,9 +8,6 @@ import { ResponsiveNavModule } from './header/components/responsive-nav/responsi
 import { DetailsModule } from './maincomponent/components/details/details.module';
 import { HomeModule } from './maincomponent/components/home/home.module';
 import { PizzasModule } from './maincomponent/components/pizzas/pizzas.module';
-
-
-
 
 @NgModule({
   declarations: [
@@ -22,7 +20,8 @@ import { PizzasModule } from './maincomponent/components/pizzas/pizzas.module';
     ResponsiveNavModule,
     PizzasModule,
     HomeModule,
-    DetailsModule
+    DetailsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,16 @@
+$primary-color: #642401;
+$secondary-color: #803a20;
+$body-color-dark: #a37f53;
+$body-color-light: #D7A86E;
+
+* {
+    font-size: 1rem;
+    color: white;
+}
 
 .grid-container {
     border: 1rem black;
     height: 100%;
-    width: 100px;
     display: inline;
 }
 
@@ -14,6 +22,9 @@
     left: 0;
     right: 0;
     margin: 2rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .mobile-container {
@@ -24,6 +35,9 @@
     left: 0;
     right: 0;
     margin: 2rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .pizza-img{
@@ -32,9 +46,10 @@
 }
 
 .pizza-img-container{
-    display: flex;
+    // display: flex;
     margin-left: -2rem;
     margin-right: -2rem;
+    margin-bottom: 1.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
     background-size: cover;
@@ -45,7 +60,8 @@
     background-size: contain;
     margin-left: -2rem;
     margin-right: -2rem;
-    width: 200%;
+    padding-left: 1rem;
+    width: 110%;
 }
 
 .ingredients-container{
@@ -73,3 +89,87 @@
     left: 0;
 }
 
+.comment-form-container{
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.comment-card-container{
+    margin-top: 2rem;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: rgba($color: #cfcfcf, $alpha: 0.1); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+textarea {
+    width: 99%;
+    height: 10vh;
+    background: rgba($secondary-color, 0.5);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: background-color 0.2s ease 0s;
+    resize: none;
+    color: #cfcfcf;
+  }
+
+::placeholder{
+color: #cfcfcf;
+}
+
+.score {
+    margin-bottom: 0.5rem;
+    width: 4rem;
+    height: auto;
+    background: rgba($secondary-color, 0.5);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: background-color 0.2s ease 0s;
+    resize: none;
+    color: #cfcfcf;
+}
+
+.score:focus {
+    background:rgba($body-color-light, $alpha: 0.5);
+    outline-width: 0;
+    color: black;
+}
+
+textarea:focus {
+    background:rgba($body-color-light, $alpha: 0.5);
+    outline-width: 0;
+    color: black;
+}
+
+.comment-card-container {
+    width: 100%;
+    position: absolute;
+}
+
+h1{
+    font-size: 2rem;
+}

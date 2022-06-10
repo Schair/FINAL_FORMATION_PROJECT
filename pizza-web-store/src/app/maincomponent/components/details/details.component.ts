@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pizza } from '../../interfaces/pizza';
 import { PizzasService } from '../../services/pizzas.service';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Ingredient } from '../../interfaces/ingredient';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-details',
@@ -24,12 +19,9 @@ export class DetailsComponent implements OnInit {
   pizza!: Pizza;
   mobile!: boolean;
 
-  tiles: Tile[] = [
-    {text: `One`, cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
+  commentForm = new FormGroup({
+    body: new FormControl(''),
+  });
 
   constructor(private route: ActivatedRoute, private pizzaService: PizzasService, 
     private observer: BreakpointObserver) { }
@@ -50,6 +42,10 @@ export class DetailsComponent implements OnInit {
   }
   getDough(){
     return this.pizza.ingredients.filter(ingredient => ingredient.type == 1);
+  }
+
+  commentSubmit() {
+    console.log(this.commentForm);
   }
 
 }

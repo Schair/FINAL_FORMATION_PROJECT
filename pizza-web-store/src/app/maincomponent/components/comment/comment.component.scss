@@ -1,0 +1,11 @@
+$primary-color: #642401;
+$secondary-color: #803a20;
+$body-color-dark: #a37f53;
+$body-color-light: #D7A86E;
+
+.card {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    max-width: 99%;
+    background-color: rgba($primary-color, $alpha: 1.0);
+}

@@ -1,19 +1,13 @@
-import { NgModule } from '@angular/core';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { DetailsRoutingModule } from './details-routing.module';
 import { DetailsComponent } from './details.component';
-
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
+import { CommentModule } from '../comment/comment.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,10 +17,15 @@ export interface Tile {
     CommonModule,
     DetailsRoutingModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    TextFieldModule,
+    CommentModule,
+    MatButtonModule
   ],
   exports: [
-    DetailsComponent
+    DetailsComponent,
+    MatFormFieldModule
   ]
 })
 export class DetailsModule { }
