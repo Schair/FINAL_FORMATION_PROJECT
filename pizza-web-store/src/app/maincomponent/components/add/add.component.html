@@ -4,24 +4,31 @@
 
             <h1 class="text-center">Añadir una nueva pizza</h1>
 
+            <form [formGroup]="pizzaForm" (ngSubmit)="test()">
+                <label for="name" class="form-label">Nombre de la pizza</label>
+                <input formControlName="name" type="text" name="name" id="name" class="form-control"
+                    placeholder="Escriba el nombre de la nueva pizza">
 
-            <label for="name" class="form-label">Nombre de la pizza</label>
-            <input type="text" name="name" id="name" class="form-control"
-                placeholder="Escriba el nombre de la nueva pizza">
 
+                <label for="dough" class="form-label">Masa</label>
+                <select formControlName="dough" class="form-control" name="dough" id="dough">
+                    <option *ngFor="let dough of getDough()" [value]="dough.id">{{dough.name}}</option>
+                </select>
 
-            <label for="dough" class="form-label">Masa</label>
-            <select class="form-control" name="dough" id="dough">
-                <option>Masa Normal</option>
-                <option>Masa Fina</option>
-            </select>
-
-            <label for="dough" class="form-label">Ingredientes</label>
+                <hr>
+                <label class="form-label">Ingredientes</label>
+                <div class="checkbox-container">
+                    <div *ngFor="let ingredient of getIngredients()" class="form-check">
+                        <input class="form-check-input" type="checkbox" formControlName="toppings" [value]="ingredient.id"
+                            [id]="ingredient.id">
+                        <label class="form-check-label">
+                            {{ingredient.name}}
+                        </label>
+                    </div>
+                </div>
+            </form>
             <hr>
-            <mat-button-toggle-group [formControl]="ingredientsList" name="ingredients" aria-label="Ingredients" (change)="printIngredients()" multiple>
-                <mat-button-toggle *ngFor="let ingredient of getToppingIngredients()" [value]="ingredient.id">{{ingredient.name}}</mat-button-toggle>
-            </mat-button-toggle-group>
-            <p>{{ingredientsList.value}}</p>
+            <button class="btn btn-info" type="submit">Añadir Pizza</button>
         </div>
     </div>
 

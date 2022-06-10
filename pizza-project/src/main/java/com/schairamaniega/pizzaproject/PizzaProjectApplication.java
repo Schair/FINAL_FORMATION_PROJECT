@@ -40,11 +40,11 @@ public class PizzaProjectApplication {
 			ingredientService.save(Ingredient.builder().name("QUESO AZUL").type(3).price(1.6).build());
 			ingredientService.save(Ingredient.builder().name("QUESO MOZZARELLA").type(3).price(1.8).build());
 			ingredientService.save(Ingredient.builder().name("QUESO PARMESANO").type(3).price(1.75).build());
-			ingredientService.save(Ingredient.builder().name("JAMON").price(2.1).build());
-			ingredientService.save(Ingredient.builder().name("JAMON DE YORK").price(1.8).build());
-			ingredientService.save(Ingredient.builder().name("PEPPERONNI").price(2.0).build());
-			ingredientService.save(Ingredient.builder().name("POLLO").price(1.8).build());
-			ingredientService.save(Ingredient.builder().name("CARNE PICADA").price(1.9).build());
+			ingredientService.save(Ingredient.builder().name("JAMON").type(4).price(2.1).build());
+			ingredientService.save(Ingredient.builder().name("JAMON DE YORK").type(4).price(1.8).build());
+			ingredientService.save(Ingredient.builder().name("PEPPERONNI").type(4).price(2.0).build());
+			ingredientService.save(Ingredient.builder().name("POLLO").type(4).price(1.8).build());
+			ingredientService.save(Ingredient.builder().name("CARNE PICADA").type(4).price(1.9).build());
 			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE").type(2).price(0.7).build());
 			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE ESPECIAL").price(1.0).type(2).build());
 			ingredientService.save(Ingredient.builder().name("SALSA BARBACOA").type(2).price(1.8).build());

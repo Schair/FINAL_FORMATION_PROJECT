@@ -81,6 +81,8 @@ public class PizzaController {
 	// public ResponseEntity<Map<String, Object>> save(@Valid @RequestBody Pizza pizza, BindingResult bindingResult){
     public ResponseEntity<Map<String, Object>> save(@ModelAttribute Pizza pizza, BindingResult bindingResult){
 
+		System.out.println(pizza);
+
 		ResponseEntity<Map<String, Object>> responseEntity = null;
 		Map<String, Object> responseAsMap = new HashMap<>();
 
