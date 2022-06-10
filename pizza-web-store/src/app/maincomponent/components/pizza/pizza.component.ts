@@ -39,6 +39,6 @@ export class PizzaComponent implements OnInit {
   }
 
   cardClick(id: number){
-    this.router.navigateByUrl('details/' + id);
+    this.router.navigateByUrl('pizzas/details/' + id);
   }
 }

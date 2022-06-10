@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="d-flex row justify-content-center">
+        <div class="col">
+
+            <h1 class="text-center">Añadir una nueva pizza</h1>
+
+
+            <label for="name" class="form-label">Nombre de la pizza</label>
+            <input type="text" name="name" id="name" class="form-control"
+                placeholder="Escriba el nombre de la nueva pizza">
+
+
+            <label for="dough" class="form-label">Masa</label>
+            <select class="form-control" name="dough" id="dough">
+                <option>Masa Normal</option>
+                <option>Masa Fina</option>
+            </select>
+
+            <label for="dough" class="form-label">Ingredientes</label>
+            <hr>
+            <mat-button-toggle-group [formControl]="ingredientsList" name="ingredients" aria-label="Ingredients" (change)="printIngredients()" multiple>
+                <mat-button-toggle *ngFor="let ingredient of getToppingIngredients()" [value]="ingredient.id">{{ingredient.name}}</mat-button-toggle>
+            </mat-button-toggle-group>
+            <p>{{ingredientsList.value}}</p>
+        </div>
+    </div>
+
+</div>

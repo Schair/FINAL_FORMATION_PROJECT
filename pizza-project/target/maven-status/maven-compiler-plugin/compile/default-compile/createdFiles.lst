@@ -2,12 +2,14 @@ com/schairamaniega/pizzaproject/dao/UserDAO.class
 com/schairamaniega/pizzaproject/services/CommentServiceImpl.class
 com/schairamaniega/pizzaproject/dao/IngredientDAO.class
 com/schairamaniega/pizzaproject/controllers/CommentController.class
+com/schairamaniega/pizzaproject/hateoas/assemblers/IngredientModelAssembler.class
 com/schairamaniega/pizzaproject/services/PizzaService.class
 com/schairamaniega/pizzaproject/controllers/PizzaController.class
 com/schairamaniega/pizzaproject/services/UserService.class
 com/schairamaniega/pizzaproject/entities/Comment$CommentBuilder.class
 com/schairamaniega/pizzaproject/entities/Pizza.class
 com/schairamaniega/pizzaproject/entities/Pizza$PizzaBuilder.class
+com/schairamaniega/pizzaproject/controllers/IngredientController.class
 com/schairamaniega/pizzaproject/services/CommentService.class
 com/schairamaniega/pizzaproject/hateoas/assemblers/PizzaModelAssembler.class
 com/schairamaniega/pizzaproject/services/PizzaServiceImpl.class

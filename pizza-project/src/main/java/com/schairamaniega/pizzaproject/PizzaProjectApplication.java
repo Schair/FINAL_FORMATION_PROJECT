@@ -36,19 +36,19 @@ public class PizzaProjectApplication {
 
 			ingredientService.save(Ingredient.builder().name("MASA NORMAL").price(1.0).type(1).build());
 			ingredientService.save(Ingredient.builder().name("MASA FINA").price(1.25).type(1).build());
-			ingredientService.save(Ingredient.builder().name("QUESO").type(2).price(1.0D).build());
-			ingredientService.save(Ingredient.builder().name("QUESO AZUL").type(2).price(1.6).build());
-			ingredientService.save(Ingredient.builder().name("QUESO MOZZARELLA").type(2).price(1.8).build());
-			ingredientService.save(Ingredient.builder().name("QUESO PARMESANO").type(2).price(1.75).build());
+			ingredientService.save(Ingredient.builder().name("QUESO").type(3).price(1.0D).build());
+			ingredientService.save(Ingredient.builder().name("QUESO AZUL").type(3).price(1.6).build());
+			ingredientService.save(Ingredient.builder().name("QUESO MOZZARELLA").type(3).price(1.8).build());
+			ingredientService.save(Ingredient.builder().name("QUESO PARMESANO").type(3).price(1.75).build());
 			ingredientService.save(Ingredient.builder().name("JAMON").price(2.1).build());
 			ingredientService.save(Ingredient.builder().name("JAMON DE YORK").price(1.8).build());
 			ingredientService.save(Ingredient.builder().name("PEPPERONNI").price(2.0).build());
 			ingredientService.save(Ingredient.builder().name("POLLO").price(1.8).build());
 			ingredientService.save(Ingredient.builder().name("CARNE PICADA").price(1.9).build());
-			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE").type(3).price(0.7).build());
-			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE ESPECIAL").price(1.0).type(3).build());
-			ingredientService.save(Ingredient.builder().name("SALSA BARBACOA").type(3).price(1.8).build());
-			ingredientService.save(Ingredient.builder().name("SALSA MOSTAZA").type(3).price(1.8).build());
+			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE").type(2).price(0.7).build());
+			ingredientService.save(Ingredient.builder().name("SALSA DE TOMATE ESPECIAL").price(1.0).type(2).build());
+			ingredientService.save(Ingredient.builder().name("SALSA BARBACOA").type(2).price(1.8).build());
+			ingredientService.save(Ingredient.builder().name("SALSA MOSTAZA").type(2).price(1.8).build());
 			ingredientService.save(Ingredient.builder().name("OREGANO").price(0.5).build());
 			ingredientService.save(Ingredient.builder().name("ACEITUNAS").price(1.0).build());
 			ingredientService.save(Ingredient.builder().name("CHAMPIÑONES").price(1.35).build());

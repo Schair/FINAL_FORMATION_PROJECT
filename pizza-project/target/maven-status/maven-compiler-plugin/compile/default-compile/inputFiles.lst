@@ -5,6 +5,7 @@
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/dao/UserDAO.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/services/CommentService.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/PizzaProjectApplication.java
+/home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/hateoas/assemblers/IngredientModelAssembler.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/hateoas/assemblers/PizzaModelAssembler.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/dao/CommentDAO.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/services/IngredientServiceImpl.java
@@ -13,6 +14,7 @@
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/dao/PizzaDAO.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/dao/IngredientDAO.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/entities/Pizza.java
+/home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/controllers/IngredientController.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/services/CommentServiceImpl.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/entities/User.java
 /home/schair/FINAL_FORMATION_PROJECT/FINAL_FORMATION_PROJECT/pizza-project/src/main/java/com/schairamaniega/pizzaproject/entities/Ingredient.java

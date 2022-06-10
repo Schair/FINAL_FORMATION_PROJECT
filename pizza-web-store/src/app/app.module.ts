@@ -8,6 +8,7 @@ import { ResponsiveNavModule } from './header/components/responsive-nav/responsi
 import { DetailsModule } from './maincomponent/components/details/details.module';
 import { HomeModule } from './maincomponent/components/home/home.module';
 import { PizzasModule } from './maincomponent/components/pizzas/pizzas.module';
+import { AddModule } from './maincomponent/components/add/add.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PizzasModule } from './maincomponent/components/pizzas/pizzas.module';
     PizzasModule,
     HomeModule,
     DetailsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AddModule
   ],
   providers: [],
   bootstrap: [AppComponent]
